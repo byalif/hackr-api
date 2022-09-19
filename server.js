@@ -31,6 +31,10 @@ app.get("/", (req, res) => {
 
 const db = require("./models");
 
-db.sequelize.sync({ alter: true, force: false }).then((req) => {
-  app.listen(process.env.PORT || 8000, () => console.log("app is running"));
+db.sequelize.sync({ alter: true, force: false }).then(() => {
+  app
+    .listen(process.env.PORT || 8000, () => console.log("app is running"))
+    .catch((err) => {
+      console.log(err);
+    });
 });
