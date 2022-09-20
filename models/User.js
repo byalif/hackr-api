@@ -2,27 +2,15 @@ module.exports = (sequelize, DataTypes) => {
   const Users = sequelize.define("Users", {
     username: {
       type: DataTypes.STRING,
-      indexes: [{ unique: true, fields: ["username"] }],
       allowNull: false,
-      validate: {
-        len: [3, 255],
-        isLowercase: true,
-      },
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      indexes: [{ unique: true, fields: ["email"] }],
-      validate: {
-        isLowercase: true,
-      },
     },
     hashed_password: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        len: [6, 255],
-      },
     },
     role: {
       type: DataTypes.STRING,
