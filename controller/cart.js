@@ -179,3 +179,10 @@ exports.allPurchases = async (req, res) => {
   const purchases = await Transactions.findAll({ where: { UserId: id } });
   res.json(purchases);
 };
+
+exports.deleteItems = async (req, res) => {
+  const { cartId } = req.params;
+  const { id } = req.user;
+  await Cart.destroy({ where: { UserId: id, id: cartId } });
+  res.json({ status: "DELETED" });
+};
