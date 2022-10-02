@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
+    "username": "admin",
     "password": "password",
-    "database": "newSite",
-    "host": "localhost",
+    "database": "mySiteDB",
+    "host": "database-1.cp5eong1hfk7.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
